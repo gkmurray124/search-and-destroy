@@ -1,19 +1,29 @@
 'use strict';
 
-// Complete this algo
 const binarySearch = (array, target) => {
 	let midpoint = Math.floor(array.length/2)
-	let left = array.slice(0, midpoint)
-	let right = array.slice(midpoint + 1)
 
 	if (target === array[midpoint]) return true
 	else if (target < array[midpoint]) {
-		return binarySearch(left, target)
-	}
-	else if (target > array[midpoint]) {
-		return binarySearch(right, target)
-	}
-	else return false
+		let minIdx = 0
+		let maxIdx = midpoint-1
+		for(let i = minIdx; i <= maxIdx; i++) { 
+			let val = array[i]
+			if(target === val) { 
+				return true 
+			} 
+		} return false
+	} else if (target > array[midpoint]) {
+		let minIdx = midpoint + 1
+		let maxIdx = array.length-1
+		for(let j = minIdx; j <= maxIdx; j++) { 
+			let val = array[j]
+			if(target === val) { 
+				return true 
+
+		} 
+	} return false
+} 
 };
 
 /*
